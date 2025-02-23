@@ -372,6 +372,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiArticlesssArticlesss extends Struct.CollectionTypeSchema {
   collectionName: 'articless';
   info: {
+    description: '';
     displayName: 'Articles';
     pluralName: 'articless';
     singularName: 'articlesss';
@@ -380,7 +381,8 @@ export interface ApiArticlesssArticlesss extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    Content: Schema.Attribute.Text & Schema.Attribute.Required;
+    CodeBlock: Schema.Attribute.Blocks;
+    Content: Schema.Attribute.Blocks & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -390,13 +392,18 @@ export interface ApiArticlesssArticlesss extends Struct.CollectionTypeSchema {
       'api::articlesss.articlesss'
     > &
       Schema.Attribute.Private;
-    Media: Schema.Attribute.Media<
+    MainMedia: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    OtherMedias: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
     Published: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID;
+    SubTitle: Schema.Attribute.Text;
     Title: Schema.Attribute.Text & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

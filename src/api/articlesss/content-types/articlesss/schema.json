@@ -4,7 +4,8 @@
   "info": {
     "singularName": "articlesss",
     "pluralName": "articless",
-    "displayName": "Articles"
+    "displayName": "Articles",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,11 +15,28 @@
       "type": "text",
       "required": true
     },
+    "MainMedia": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Published": {
+      "type": "datetime"
+    },
+    "slug": {
+      "type": "uid"
+    },
     "Content": {
-      "type": "text",
+      "type": "blocks",
       "required": true
     },
-    "Media": {
+    "OtherMedias": {
       "allowedTypes": [
         "images",
         "files",
@@ -28,11 +46,11 @@
       "type": "media",
       "multiple": true
     },
-    "Published": {
-      "type": "datetime"
+    "SubTitle": {
+      "type": "text"
     },
-    "slug": {
-      "type": "uid"
+    "CodeBlock": {
+      "type": "blocks"
     }
   }
 }
