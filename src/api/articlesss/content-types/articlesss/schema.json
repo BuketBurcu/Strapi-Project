@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "articless",
+  "info": {
+    "singularName": "articlesss",
+    "pluralName": "articless",
+    "displayName": "Articles"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "content": {
+      "type": "text",
+      "required": true
+    },
+    "Media": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "Slug": {
+      "type": "uid",
+      "required": true
+    },
+    "Published": {
+      "type": "datetime"
+    },
+    "Title": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
