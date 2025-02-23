@@ -369,7 +369,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiArticlesssArticlesss extends Struct.SingleTypeSchema {
+export interface ApiArticlesssArticlesss extends Struct.CollectionTypeSchema {
   collectionName: 'articless';
   info: {
     displayName: 'Articles';
@@ -380,7 +380,7 @@ export interface ApiArticlesssArticlesss extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    content: Schema.Attribute.Text & Schema.Attribute.Required;
+    Content: Schema.Attribute.Text & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -396,7 +396,7 @@ export interface ApiArticlesssArticlesss extends Struct.SingleTypeSchema {
     >;
     Published: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
-    Slug: Schema.Attribute.UID & Schema.Attribute.Required;
+    slug: Schema.Attribute.UID;
     Title: Schema.Attribute.Text & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

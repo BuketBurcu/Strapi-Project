@@ -1,5 +1,5 @@
 {
-  "kind": "singleType",
+  "kind": "collectionType",
   "collectionName": "articless",
   "info": {
     "singularName": "articlesss",
@@ -10,7 +10,11 @@
     "draftAndPublish": true
   },
   "attributes": {
-    "content": {
+    "Title": {
+      "type": "text",
+      "required": true
+    },
+    "Content": {
       "type": "text",
       "required": true
     },
@@ -24,16 +28,11 @@
       "type": "media",
       "multiple": true
     },
-    "Slug": {
-      "type": "uid",
-      "required": true
-    },
     "Published": {
       "type": "datetime"
     },
-    "Title": {
-      "type": "text",
-      "required": true
+    "slug": {
+      "type": "uid"
     }
   }
 }
